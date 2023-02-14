@@ -22,6 +22,7 @@ public class Scorekeeper : MonoBehaviourPunCallbacks
         {
             view = GetComponent<PhotonView>();
             PhotonNetwork.Instantiate(paddlePrefab.name, SpawnP1.position, Quaternion.identity, 0);
+
         }
         Player2ScoreDisplay.text = "Waiting...";
     }

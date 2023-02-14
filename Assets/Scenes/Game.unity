@@ -355,6 +355,7 @@ GameObject:
   - component: {fileID: 542334213}
   - component: {fileID: 542334212}
   - component: {fileID: 542334211}
+  - component: {fileID: 542334214}
   m_Layer: 5
   m_Name: GoUpButton
   m_TagString: Untagged
@@ -379,7 +380,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 252, y: 210}
+  m_AnchoredPosition: {x: 250, y: 130}
   m_SizeDelta: {x: 62.3384, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &542334211
@@ -476,6 +477,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 542334209}
   m_CullTransparentMesh: 1
+--- !u!114 &542334214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 542334209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 705022051}
+          m_TargetAssemblyTypeName: Paddle, Assembly-CSharp
+          m_MethodName: MoveUp
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &705022050
 GameObject:
   m_ObjectHideFlags: 0
@@ -508,7 +538,6 @@ MonoBehaviour:
   MoveSpeed: 10
   MoveRange: 10
   AcceptsInput: 0
-  view: {fileID: 0}
 --- !u!4 &705022052
 Transform:
   m_ObjectHideFlags: 0
@@ -834,6 +863,7 @@ GameObject:
   - component: {fileID: 842592903}
   - component: {fileID: 842592902}
   - component: {fileID: 842592901}
+  - component: {fileID: 842592904}
   m_Layer: 5
   m_Name: GoDownButton
   m_TagString: Untagged
@@ -858,7 +888,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 245, y: -206}
+  m_AnchoredPosition: {x: 250, y: -130}
   m_SizeDelta: {x: 62.3384, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &842592901
@@ -955,6 +985,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 842592899}
   m_CullTransparentMesh: 1
+--- !u!114 &842592904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 842592899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 705022051}
+          m_TargetAssemblyTypeName: Paddle, Assembly-CSharp
+          m_MethodName: MoveDown
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &894246819
 GameObject:
   m_ObjectHideFlags: 0
@@ -1904,6 +1963,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1424938333}
+  - component: {fileID: 1424938334}
   m_Layer: 0
   m_Name: Controller
   m_TagString: Untagged
@@ -1926,6 +1986,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1424938334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1424938332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 378ee6638d2e6d143afe08aebf56cc1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controlUpButton: {fileID: 542334211}
+  controlDownButton: {fileID: 842592901}
 --- !u!1 &1945906255
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,19 +2,36 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using System.Security.Cryptography;
+using UnityEngine.EventSystems;
 
-public class Paddle : MonoBehaviour
+public class Paddle : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     public float MoveSpeed = 10f;
     public float MoveRange = 10f;
     public bool AcceptsInput;
-    public 
     PhotonView view;
 
     private void Start()
     {
         view = GetComponent<PhotonView>();
         AcceptsInput = view.IsMine;
+        if (view.IsMine)
+        {
+            GameControler.instance.controlUpButton.onClick.AddListener(MoveUp);
+            GameControler.instance.controlDownButton.onClick.AddListener(MoveDown);
+        }
+    
+    }
+
+    public void OnPointerDown(PointerEventData eventData)
+    {
+
+    }
+
+    public void OnPointerUp(PointerEventData eventData)
+    {
+
     }
 
     void Update()
@@ -36,7 +53,7 @@ public class Paddle : MonoBehaviour
         if (!AcceptsInput)
             return;
         Vector3 pos = transform.position;
-        pos.z += 1 * MoveSpeed * Time.deltaTime;
+        pos.z += 15 * MoveSpeed * Time.deltaTime;
         pos.z = Mathf.Clamp(pos.z, -MoveRange, MoveRange);
         transform.position = pos;
     }
@@ -46,7 +63,7 @@ public class Paddle : MonoBehaviour
         if (!AcceptsInput)
             return;
         Vector3 pos = transform.position;
-        pos.z += - 1 * MoveSpeed * Time.deltaTime;
+        pos.z += - 15 * MoveSpeed * Time.deltaTime;
         pos.z = Mathf.Clamp(pos.z, -MoveRange, MoveRange);
         transform.position = pos;
     }
